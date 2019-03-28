@@ -1,9 +1,6 @@
 #include <IRremote.h>
-
 int RECV_PIN = 11;          //红外接收引脚定义
-
 IRrecv irrecv(RECV_PIN);
-
 decode_results results;
 
 void setup()
@@ -18,7 +15,7 @@ void loop()
 {
   if (irrecv.decode(&results)) 
   {
-    Serial.println(results.value, HEX);
+    Serial.println(results.value);
     irrecv.resume();    // 接收下一个值
   }
   delay(100);
